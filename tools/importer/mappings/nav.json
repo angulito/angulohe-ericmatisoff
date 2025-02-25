@@ -1,0 +1,55 @@
+{
+  "url": "https://blog.ericmatisoff.com/",
+  "browserOptions": {
+    "width": 1280,
+    "disableJS": false,
+    "adBlocker": true,
+    "gdprBlocker": true,
+    "delay": 0,
+    "screenshot": false
+  },
+  "autoDetect": true,
+  "template": {
+    "raw": "/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/header[1]\n  - /html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/header[1]/h1[1]\n  - /html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/header[1]/h4[1]\n  /html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/section[1]\n  - /html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/section[1]/div[1]\n  - /html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/section[1]/div[2]\n  /html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/section[2]\n  - /html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/section[2]/h2[1]\n  - /html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/section[2]/div[1]",
+    "hash": -182756068
+  },
+  "pageHeight": 3005,
+  "mapping": [
+    {
+      "id": "nav-1",
+      "path": "/nav",
+      "sections": [
+        {
+          "id": "nav-1-1",
+          "blocks": [
+            {
+              "id": "box-id-51766958",
+              "color": "rgba(0, 255, 0, 1)",
+              "width": 1240,
+              "height": 360,
+              "xpath": "/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/header[1]",
+              "childrenXpaths": [
+                {
+                  "xpath": "/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/header[1]/h1[1]",
+                  "xpathWithDetails": "id(\"__next\")/div[@class=\"min-h-screen\"]/div[@class=\"container mx-auto px-5\"]/header[@class=\"mb-10 mt-16 flex flex-col items-center md:mb-12 md:flex-row md:justify-between text-pretty\"]/h1[@class=\"text-6xl font-bold leading-tight tracking-tighter md:pr-8 md:text-8xl\"]"
+                },
+                {
+                  "xpath": "/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/header[1]/h4[1]",
+                  "xpathWithDetails": "id(\"__next\")/div[@class=\"min-h-screen\"]/div[@class=\"container mx-auto px-5\"]/header[@class=\"mb-10 mt-16 flex flex-col items-center md:mb-12 md:flex-row md:justify-between text-pretty\"]/h4[@class=\"mt-5 text-center text-lg md:pl-8 md:text-left BlogHeader_portableText__I5RfC\"]"
+                }
+              ],
+              "layout": {
+                "numCols": 2,
+                "numRows": 1
+              },
+              "x": 20,
+              "y": 64,
+              "mapping": "header",
+              "customBlockName": "aiheader-drnc0j-51766958"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
