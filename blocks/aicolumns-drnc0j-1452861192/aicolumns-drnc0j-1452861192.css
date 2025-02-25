@@ -54,7 +54,7 @@
   border-radius: 50%; /* Ensure avatar is circular */
 }
 
-@media (max-width: 768px) {
+@media (width <= 768px) {
   .aicolumns-drnc0j-1452861192 > div {
     flex-direction: column; /* Stack rows vertically on smaller screens */
   }
