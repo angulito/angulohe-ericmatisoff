@@ -1,268 +1,80 @@
-/* header and nav layout */
-header .nav-wrapper {
-  background-color: var(--background-color);
-  width: 100%;
-  z-index: 2;
-  position: fixed;
+
+.header-wrapper {
+  background-color: white; /* Ensure solid white background */
+}
+
+.header-wrapper .nav-wrapper {
+  position: fixed; /* Fix header in place */
+  z-index: 2; /* Ensure header is above other elements */
+  display: flex; /* Flexbox for alignment */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  width: 100%; /* Full width of the page */
+  background-color: white; /* Solid background color */
 }
 
 header nav {
-  box-sizing: border-box;
-  display: grid;
-  grid-template:
-    'hamburger brand tools' var(--nav-height)
-    'sections sections sections' 1fr / auto 1fr auto;
-  align-items: center;
-  gap: 0 24px;
-  margin: auto;
-  max-width: 1248px;
-  height: var(--nav-height);
-  padding: 0 24px;
-  font-family: var(--body-font-family);
+  display: flex; /* Flexbox layout for main header */
+  max-width: 1264px; /* Constrain width for centered alignment */
+  justify-content: space-between; /* Space out elements */
+  align-items: center; /* Align items vertically in the center */
+  width: 100%; /* Use full available width */
+  padding: 0 32px; /* Add horizontal padding */
 }
 
-header nav[aria-expanded='true'] {
-  grid-template:
-    'hamburger brand' var(--nav-height)
-    'sections sections' 1fr
-    'tools tools' var(--nav-height) / auto 1fr;
-  overflow-y: auto;
-  min-height: 100dvh;
+.default-content-wrapper {
+  display: flex; /* Flexbox for side-by-side layout */
+  flex-direction: row; /* Ensure horizontal alignment */
+  align-items: flex-start; /* Align content at the top */
+  gap: 30px; /* Adjust spacing between sections for balance */
+  max-width: 1200px; /* Constrain width for content block */
+  margin: 0 auto; /* Center the block horizontally */
 }
 
-@media (width >= 900px) {
-  header nav {
-    display: flex;
-    justify-content: space-between;
-    gap: 0 32px;
-    max-width: 1264px;
-    padding: 0 32px;
-  }
-
-  header nav[aria-expanded='true'] {
-    min-height: 0;
-    overflow: visible;
-  }
+.default-content-wrapper h1 {
+  display: block; /* Ensure block-level layout */
+  white-space: pre-wrap; /* Preserve line breaks for vertical stacking */
+  font-size: 3rem; /* Large font size for heading */
+  font-weight: bold; /* Bold text for emphasis */
+  margin: 0; /* Remove default margins */
+  line-height: 1.2; /* Adjust line height for proper spacing */
+  flex: 1; /* Allow heading to take up its space */
+  text-align: left; /* Align text to the left */
 }
 
-header nav p {
-  margin: 0;
-  line-height: 1;
+.default-content-wrapper h4 {
+  flex: 1; /* Allow right section to take up remaining space */
+  font-size: 1rem; /* Smaller font size for descriptive text */
+  margin: 0; /* Remove default margins */
+  line-height: 1.5; /* Adjust line height for readability */
+  align-self: flex-start; /* Align text at the top */
+  max-width: 400px; /* Constrain width of descriptive text */
+  text-align: left; /* Align text to the left */
 }
 
-header nav a:any-link {
-  color: currentcolor;
-}
-
-/* hamburger */
-header nav .nav-hamburger {
-  grid-area: hamburger;
-  height: 22px;
-  display: flex;
-  align-items: center;
-}
-
-header nav .nav-hamburger button {
-  height: 22px;
-  margin: 0;
-  border: 0;
-  border-radius: 0;
-  padding: 0;
-  background-color: var(--background-color);
-  color: inherit;
-  overflow: initial;
-  text-overflow: initial;
-  white-space: initial;
-}
-
-header nav .nav-hamburger-icon,
-header nav .nav-hamburger-icon::before,
-header nav .nav-hamburger-icon::after {
-  box-sizing: border-box;
-  display: block;
-  position: relative;
-  width: 20px;
-}
-
-header nav .nav-hamburger-icon::before,
-header nav .nav-hamburger-icon::after {
-  content: '';
-  position: absolute;
-  background: currentcolor;
-}
-
-header nav[aria-expanded='false'] .nav-hamburger-icon,
-header nav[aria-expanded='false'] .nav-hamburger-icon::before,
-header nav[aria-expanded='false'] .nav-hamburger-icon::after {
-  height: 2px;
-  border-radius: 2px;
-  background: currentcolor;
-}
-
-header nav[aria-expanded='false'] .nav-hamburger-icon::before {
-  top: -6px;
-}
-
-header nav[aria-expanded='false'] .nav-hamburger-icon::after {
-  top: 6px;
-}
-
-header nav[aria-expanded='true'] .nav-hamburger-icon {
-  height: 22px;
-}
-
-header nav[aria-expanded='true'] .nav-hamburger-icon::before,
-header nav[aria-expanded='true'] .nav-hamburger-icon::after {
-  top: 3px;
-  left: 1px;
-  transform: rotate(45deg);
-  transform-origin: 2px 1px;
-  width: 24px;
-  height: 2px;
-  border-radius: 2px;
-}
-
-header nav[aria-expanded='true'] .nav-hamburger-icon::after {
-  top: unset;
-  bottom: 3px;
-  transform: rotate(-45deg);
-}
-
-@media (width >= 900px) {
-  header nav .nav-hamburger {
-    display: none;
-    visibility: hidden;
-  }
-}
-
-/* brand */
-header .nav-brand {
-  grid-area: brand;
-  flex-basis: 128px;
-  font-size: var(--heading-font-size-s);
-  font-weight: 700;
-  line-height: 1;
+header nav .nav-brand {
+  order: 1; /* Ensure logo is on the left */
+  flex-shrink: 0; /* Prevent logo from shrinking */
 }
 
 header nav .nav-brand img {
-  width: 128px;
-  height: auto;
+  max-height: 50px; /* Constrain logo height */
+  object-fit: contain; /* Prevent logo from being stretched */
 }
 
-/* sections */
 header nav .nav-sections {
-  grid-area: sections;
-  flex: 1 1 auto;
-  display: none;
-  visibility: hidden;
+  order: 2; /* Ensure navigation menu is in the middle */
+  flex: 1; /* Allow navigation to take up remaining space */
+  display: flex; /* Display links horizontally */
+  justify-content: center; /* Center links within navigation */
 }
 
-header nav[aria-expanded='true'] .nav-sections {
-  display: block;
-  visibility: visible;
-  align-self: start;
-}
-
-header nav .nav-sections ul {
-  list-style: none;
-  padding-left: 0;
-  font-size: var(--body-font-size-s);
-}
-
-header nav .nav-sections ul > li {
-  font-weight: 500;
-}
-
-header nav .nav-sections ul > li > ul {
-  margin-top: 0;
-}
-
-header nav .nav-sections ul > li > ul > li {
-  font-weight: 400;
-}
-
-@media (width >= 900px) {
-  header nav .nav-sections {
-    display: block;
-    visibility: visible;
-    white-space: nowrap;
-  }
-
-  header nav[aria-expanded='true'] .nav-sections {
-    align-self: unset;
-  }
-
-  header nav .nav-sections .nav-drop {
-    position: relative;
-    padding-right: 16px;
-    cursor: pointer;
-  }
-
-  header nav .nav-sections .nav-drop::after {
-    content: '';
-    display: inline-block;
-    position: absolute;
-    top: 0.5em;
-    right: 2px;
-    transform: rotate(135deg);
-    width: 6px;
-    height: 6px;
-    border: 2px solid currentcolor;
-    border-radius: 0 1px 0 0;
-    border-width: 2px 2px 0 0;
-  }
-
-  header nav .nav-sections .nav-drop[aria-expanded='true']::after {
-    top: unset;
-    bottom: 0.5em;
-    transform: rotate(315deg);
-  }
-
-  header nav .nav-sections ul {
-    display: flex;
-    gap: 24px;
-    margin: 0;
-  }
-
-  header nav .nav-sections .default-content-wrapper > ul > li {
-    flex: 0 1 auto;
-    position: relative;
-  }
-
-  header nav .nav-sections .default-content-wrapper > ul > li > ul {
-    display: none;
-    position: relative;
-  }
-
-  header nav .nav-sections .default-content-wrapper > ul > li[aria-expanded='true'] > ul {
-    display: block;
-    position: absolute;
-    left: -24px;
-    width: 200px;
-    top: 150%;
-    padding: 16px;
-    background-color: var(--light-color);
-    white-space: initial;
-  }
-
-  header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
-    content: '';
-    position: absolute;
-    top: -8px;
-    left: 16px;
-    width: 0;
-    height: 0;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-bottom: 8px solid var(--light-color);
-  }
-
-  header nav .nav-sections .default-content-wrapper > ul > li > ul > li {
-    padding: 8px 0;
-  }
-}
-
-/* tools */
 header nav .nav-tools {
-  grid-area: tools;
+  order: 3; /* Ensure tools section is on the right */
+  flex-shrink: 0; /* Prevent tools section from shrinking */
+}
+
+header nav .nav-hamburger {
+  display: none; /* Hide hamburger menu */
+  visibility: hidden; /* Ensure it's not visible */
 }
