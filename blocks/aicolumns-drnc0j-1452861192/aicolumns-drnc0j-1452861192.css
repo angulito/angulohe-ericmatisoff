@@ -1,8 +1,14 @@
 
+/* .aicolumns-drnc0j-1452861192:not(.background-blue) */
 .aicolumns-drnc0j-1452861192 {
   display: flex;
   flex-wrap: wrap;
   gap: 12px; /* Reduce spacing between rows for a tighter layout */
+  background-color: #cf381d;
+}
+
+.aicolumns-drnc0j-1452861192.background-blue {
+  background-color: #1d3ecf;
 }
 
 .aicolumns-drnc0j-1452861192 > div {
