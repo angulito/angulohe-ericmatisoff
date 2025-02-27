@@ -4,8 +4,8 @@ This is a project created by AEMY.
 
 ## Environments
 
-- Preview: https://main--angulohe-ericmatisoff--aemdemos.aem.page/
-- Live: https://main--angulohe-ericmatisoff--aemdemos.aem.live/
+- Preview: https://main--angulohe-ericmatisoff--angulito.aem.page/
+- Live: https://main--angulohe-ericmatisoff--angulito.aem.live/
 
 ## Installation
 
